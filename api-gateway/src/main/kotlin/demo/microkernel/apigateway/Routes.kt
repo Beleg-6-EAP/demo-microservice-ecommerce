@@ -11,7 +11,7 @@ class Routes {
     fun clientPortal(routeLocatorBuilder: RouteLocatorBuilder) =
         routeLocatorBuilder.routes {
             route(id = "shipping-service") {
-                path("/api/shipping/**")
+                path("/api/shipments/**")
                 uri("http://localhost:8083")
             }
             route(id = "payment-service") {
