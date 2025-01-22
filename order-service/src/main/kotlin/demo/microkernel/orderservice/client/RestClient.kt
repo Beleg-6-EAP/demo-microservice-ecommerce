@@ -8,7 +8,7 @@ import org.springframework.web.client.RestClient
 @Component
 internal class RestClient {
     private val restClient = RestClient.builder()
-        .baseUrl("http://localhost:8080")
+        .baseUrl("http://api-gateway:8080")
         .build()
 
     fun postPayment(orderId: String): ResponseEntity<Void> =

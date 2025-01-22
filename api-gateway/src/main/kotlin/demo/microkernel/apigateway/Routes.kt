@@ -10,19 +10,18 @@ class Routes {
     @Bean
     fun clientPortal(routeLocatorBuilder: RouteLocatorBuilder) =
         routeLocatorBuilder.routes {
-            route(id = "shipping-service") {
-                path("/api/shipments/**")
-                uri("http://localhost:8083")
+            route(id = "order-service") {
+                path("/api/orders/**")
+                uri("http://order-service:8081")
             }
             route(id = "payment-service") {
                 path("/api/payments/**")
-                uri("http://localhost:8082")
+                uri("http://payment-service:8082")
             }
-            route(id = "order-service") {
-                path("/api/orders/**")
-                uri("http://localhost:8081")
+            route(id = "shipping-service") {
+                path("/api/shipments/**")
+                uri("http://shipping-service:8083")
             }
-
         }
 
 }
