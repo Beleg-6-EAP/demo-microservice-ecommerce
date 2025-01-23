@@ -23,7 +23,7 @@ This will start a web-server running on `http://localhost:8080` with the followi
 - AllPayments: `GET /api/payments`
 - AllShipments: `GET /api/shipments`
 
-We start with en empty database.
+We start with an empty database.
 To create an order `POST` below request to `http://localhost:8080/api/orders`:
 
 ```json
@@ -36,7 +36,7 @@ To create an order `POST` below request to `http://localhost:8080/api/orders`:
 
 This will initiate payment as well as shipment.
 
-It's success can be checked by requesting the other endpoints via `GET`.
+Its success can be checked by requesting the other endpoints via `GET`.
 
 ## Troubleshooting
 
