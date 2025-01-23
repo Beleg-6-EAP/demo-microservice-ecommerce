@@ -1,5 +1,6 @@
 package demo.microkernel.orderservice.client
 
+import demo.microkernel.orderservice.internal.model.LogDto
 import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Component
 import org.springframework.web.client.RestClient
@@ -22,6 +23,13 @@ internal class RestClient {
         restClient.post()
             .uri("/api/shipments")
             .body(orderId)
+            .retrieve()
+            .toBodilessEntity()
+
+    fun postLog(message: String): ResponseEntity<Void> =
+        restClient.post()
+            .uri("/log")
+            .body(LogDto(serviceName = "order-service", message = message))
             .retrieve()
             .toBodilessEntity()
 }

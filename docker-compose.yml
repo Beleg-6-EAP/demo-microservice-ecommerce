@@ -1,6 +1,7 @@
 services:
   api-gateway:
     image: api-gateway
+    pull_policy: never
     build: ./api-gateway
     ports:
       - "8080:8080"
@@ -12,6 +13,7 @@ services:
 
   order-service:
     image: order-service
+    pull_policy: never
     build: ./order-service
     ports:
       - "8081:8081"
@@ -22,6 +24,7 @@ services:
 
   payment-service:
     image: payment-service
+    pull_policy: never
     build: ./payment-service
     ports:
       - "8082:8082"
@@ -32,9 +35,21 @@ services:
 
   shipping-service:
     image: shipping-service
+    pull_policy: never
     build: ./shipping-service
     ports:
       - "8083:8083"
+    restart:
+      unless-stopped
+    networks:
+      - service-network
+
+  logging-service:
+    image: logging-service
+    pull_policy: never
+    build: ./logging-service
+    ports:
+      - "8084:8084"
     restart:
       unless-stopped
     networks:

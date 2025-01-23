@@ -16,6 +16,7 @@ internal class OrderServiceImpl(
         val savedOrder: Order = orderRepository.save(order)
         restClient.postPayment(savedOrder.id)
         restClient.postShipment(savedOrder.id)
+        restClient.postLog("Order created: ${savedOrder.id} for customer: ${savedOrder.userId}")
         return savedOrder
     }
 

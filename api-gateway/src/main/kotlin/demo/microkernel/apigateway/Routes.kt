@@ -22,6 +22,11 @@ class Routes {
                 path("/api/shipments/**")
                 uri("http://shipping-service:8083")
             }
+            route(id = "logging-service") {
+                path("/log/**")
+                uri("http://logging-service:8084")
+            }
+
         }
 
 }
