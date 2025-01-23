@@ -1,5 +1,7 @@
 ![Static Badge](https://img.shields.io/badge/Kotin-1.9.25-orange)
 ![Static Badge](https://img.shields.io/badge/Maven-4.0.0-red)
+[![Maven Build & Tests](https://github.com/Beleg-6-EAP/demo-microservice-ecommerce/actions/workflows/maven-build-test.yml/badge.svg)](https://github.com/Beleg-6-EAP/demo-microservice-ecommerce/actions/workflows/maven-build-test.yml)
+
 
 # Microservices E-Commerce Demo
 
