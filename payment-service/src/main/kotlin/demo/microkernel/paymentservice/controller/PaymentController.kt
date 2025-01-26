@@ -1,5 +1,6 @@
 package demo.microkernel.paymentservice.controller
 
+import demo.microkernel.paymentservice.internal.model.Payment
 import demo.microkernel.paymentservice.service.PaymentService
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
@@ -17,6 +18,6 @@ class PaymentController(
     }
 
     @GetMapping
-    fun getAll(): ResponseEntity<List<Any>>
+    fun getAll(): ResponseEntity<List<Payment>>
         = ResponseEntity.ok(paymentService.getAll())
 }

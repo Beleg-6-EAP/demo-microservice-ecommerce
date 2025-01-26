@@ -1,5 +1,6 @@
 package demo.microkernel.shippingservice.controller
 
+import demo.microkernel.shippingservice.internal.model.Shipment
 import demo.microkernel.shippingservice.service.ShipmentService
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
@@ -17,6 +18,6 @@ class ShipmentController(
     }
 
     @GetMapping
-    fun getAll(): ResponseEntity<List<Any>> =
+    fun getAll(): ResponseEntity<List<Shipment>> =
         ResponseEntity.ok(shipmentService.getAll())
 }
